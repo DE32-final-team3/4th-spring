@@ -4,7 +4,5 @@ CREATE TABLE face_age (
     file_path VARCHAR(255) NOT NULL COMMENT '저장 전체 경로 및 변환 파일명',
     request_time CHAR(19) NOT NULL COMMENT '요청시간',
     prediction_result VARCHAR(10) COMMENT '예측 결과',
-    prediction_time CHAR(19) COMMENT '예측시간',
-    answer VARCHAR(10) COMMENT '실제 정답',
-    comments VARCHAR(255) COMMENT '추가사항'
+    answer VARCHAR(10) COMMENT '실제 정답'
 );

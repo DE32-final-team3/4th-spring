@@ -24,7 +24,10 @@ public class FileUploadController {
     private FaceAgeRepository faceAgeRepository;
 
     @PostMapping("/uploadfile")
-    public String handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("prediction_result") String predictionResult) throws IOException {
+    public String handleFileUpload(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam("prediction_result") String predictionResult)
+            throws IOException {
 
         String originName = file.getOriginalFilename();
 
@@ -34,7 +37,7 @@ public class FileUploadController {
             directory.mkdirs();
         }
 
-        String uniqueFileName = UUID.randomUUID().toString() + "_" + originName;
+        String uniqueFileName = UUID.randomUUID().toString() + ".jpg";
         String filePath = uploadDir + File.separator + uniqueFileName;
         File dest = new File(filePath);
         file.transferTo(dest);
@@ -58,13 +61,12 @@ public class FileUploadController {
         return ResponseEntity.ok(allRecords);
     }
 
-
     @PutMapping("/update")
     public ResponseEntity<String> updateFaceAge(@RequestParam String answer, @RequestParam Long num) {
         Optional<FaceAge> optionalFaceAge = faceAgeRepository.findById(num);
         if (optionalFaceAge.isPresent()) {
             FaceAge faceAge = optionalFaceAge.get();
-            faceAge.setAnswer(answer);  
+            faceAge.setAnswer(answer);
             faceAgeRepository.save(faceAge);
             return ResponseEntity.ok("Updated successfully");
         } else {
@@ -83,4 +85,3 @@ public class FileUploadController {
     }
 
 }
-
