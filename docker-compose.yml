@@ -26,3 +26,5 @@ services:
     platform: linux/amd64
     environment:
       SPRING_DATASOURCE_URL: jdbc:mariadb://database:3306/team3
+    volumes:
+      - /home/ubuntu/images:/home/ubuntu/images
