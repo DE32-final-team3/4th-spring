@@ -1,0 +1,17 @@
+server:
+  port: 8972
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3000/team3
+    username: 3rd
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
