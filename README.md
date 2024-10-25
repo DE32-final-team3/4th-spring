@@ -1,5 +1,10 @@
 # Getting Started
 
+## Usage
+```bash
+$ docker compose up -d --force-recreate --build
+```
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
