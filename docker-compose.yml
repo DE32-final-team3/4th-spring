@@ -5,7 +5,7 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
-      MARIADB_USER: 3rd
+      MARIADB_USER: team3
       MARIADB_PASSWORD: 1234
       MARIADB_DATABASE: team3
     volumes:
