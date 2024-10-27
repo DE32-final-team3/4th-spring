@@ -6,7 +6,7 @@ $ docker compose up -d --force-recreate --build
 ```
 
 ## Spring REST API with CURL
-- Upload file with prediction-result
+- Upload file with prediction result
 ```bash
 curl -F "file=@<file_path/file_name>" -F "prediction_result=<prediction_result>" http://localhost:3003/uploadfile
 ```
@@ -54,7 +54,7 @@ public ResponseEntity<List<FaceAge>> getAllFaceAgeRecords() {
     return ResponseEntity.ok(allRecords);
 }
 ```
-- Update data info
+- Update answer value
 ```bash
 curl -X PUT -d "answer=<answer>" -d "num=<id>" http://localhost:3003/update
 ```
